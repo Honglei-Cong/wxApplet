@@ -1,0 +1,43 @@
+<view class="container">
+  <view class="header {{scrollDown?'hidden':''}}">
+    <view class="name ellipsis">{{holden.product_name}}</view>
+    <view class="line"></view>
+    <view class="desc">持有人: {{holden.username}}</view>
+  </view>
+  <view class="content-container">
+    <scroll-view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">产品代码: </view>
+        <view class="weui-cell__ft">{{holden.product_code}}</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">产品名称：</view>
+        <view class="weui-cell__ft">{{holden.product_name}}</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">持仓份额：</view>
+        <view class="weui-cell__ft">{{holden.position}}</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">已收益：</view>
+        <view class="weui-cell__ft">{{holden.interest}}元</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">购买时间：</view>
+        <view class="weui-cell__ft">{{holden.pur_date}}</view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="cart">
+    <form bindsubmit="submit" report-submit="true">
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">
+          <input type='number' name="repurCount" placeholder='请输入赎回份额' bindinput="setRepurCount" />
+        </view>
+        <view class="weui-cell__ft">
+          <button class="yellow {{repurCount == 0?'disabled':''}}" formType="submit" disabled="{{repurCount == 0}}">赎回</button>
+        </view>
+      </view>
+    </form>
+  </view>
+</view>

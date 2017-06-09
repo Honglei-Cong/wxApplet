@@ -1,0 +1,67 @@
+<view class="container">
+  <scroll-view scroll-y="true" scroll-into-view="{{scrollIntoView}}" bindscroll="onScroll">
+    <view id="nearby" class="section section-big nearby">
+      <view class="title">产品发布</view>
+      <view>
+        <form bindsubmit="submit" report-submit="true">
+          <view class="formlable">
+            <view class="weui-cell weui-cell_switch">
+              <view class="weui-cell__bd">产品代码: </view>
+              <view class="weui-cell__ft">
+                <input name="productCode" class="forminput" placeholder='请输入产品代码' bindinput="setProductCode" />
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_switch">
+              <view class="weui-cell__bd">产品名称: </view>
+              <view class="weui-cell__ft">
+                <input name="productName" class="forminput" placeholder='请输入产品名称' bindinput="setProductName" />
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_switch">
+              <view class="weui-cell__bd">产品风险评级: </view>
+              <view class="weui-cell__ft">
+                <input name="riskRate" class="forminput" placeholder='请输入产品风险评级' bindinput="setRiskRate" />
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_switch">
+              <view class="weui-cell__bd">产品周期: </view>
+              <view class="weui-cell__ft">
+                <input name="period" class="forminput" placeholder='请输入产品周期（天）' bindinput="setProductPeriod" />
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_switch">
+              <view class="weui-cell__bd">预期年化收益率: </view>
+              <view class="weui-cell__ft">
+                <input name="expAnnualRate" class="forminput" placeholder='请输入预期年化收益率' bindinput="setExpAnnualRate" />
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_switch">
+              <view class="weui-cell__bd">发行币种: </view>
+              <view class="weui-cell__ft">
+                <picker bindchange="setProductCurrency" value="{{currencyIndex}}" range="{{currencyCategory}}">
+                  <view class="weui-input">{{currencyCategory[currencyIndex]}}</view>
+                </picker>
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_switch">
+              <view class="weui-cell__bd">发行方: </view>
+              <view class="weui-cell__ft">
+                <input name="issuer" class="forminput" placeholder='请输入发行方名称' bindinput="setProductIssuer" />
+              </view>
+            </view>
+            <label class="formlable"></label>
+            <view class="weui-cell weui-cell_switch">
+              <view class="weui-cell__bd">发行规模: </view>
+              <view class="weui-cell__ft">
+                <input name="issueScale" class="forminput" placeholder='请输入发行规模（万元）' bindinput="setProductScale" />
+              </view>
+            </view>
+            <view class="weui-cell weui-cell_switch">
+              <button class="yellow {{productDefineValid?'':'disabled'}} button-sp-area" formType="submit">发布产品</button>
+            </view>
+          </view>
+        </form>
+      </view>
+    </view>
+  </scroll-view>
+</view>

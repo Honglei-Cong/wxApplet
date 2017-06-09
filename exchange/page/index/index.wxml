@@ -1,0 +1,23 @@
+<view class="container">
+	<scroll-view scroll-y="true" scroll-into-view="{{scrollIntoView}}" bindscroll="onScroll">
+		<view id="nearby" class="section section-big nearby">
+			<view class="title">境内产品</view>
+			<view class="filters">
+				<view class="filter {{filterId==1?'active':''}}" data-id="1" bindtap="tapFilter">综合排序<text class="v">↓</text>
+				</view>
+				<view class="filter {{filterId==2?'active':''}}" data-id="2" bindtap="tapFilter">销量最高<text class="v">↓</text>
+				</view>
+				<view class="filter {{filterId==3?'active':''}}" data-id="3" bindtap="tapFilter">收益最高<text class="v">↓</text>
+				</view>
+			</view>
+			<view class="shop" wx:for="{{products}}" wx:key="product_id">
+				<navigator url="/page/shop/shop?id={{item.product_id}}">
+          <view class="product">{{item.product_name}}</view>
+          <view class="product_detail">产品发行方：{{item.issuer}}</view>
+          <view class="product_detail">产品规模：{{item.issue_scale}} 元</view>
+          <view class="product_detail">剩余份额：{{item.issue_scale - item.purchased_scale}}</view>
+				</navigator>
+			</view>
+		</view>
+	</scroll-view>
+</view>

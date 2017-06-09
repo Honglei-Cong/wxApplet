@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="header">
+    <image class="avatar" src="{{userInfo.avatarUrl}}" />
+    <view class="nickname">{{userInfo.nickName}}</view>
+  </view>
+  <view class="section">
+    <view class="line judgement">我的信息</view>
+  </view>
+  <view class="section">
+    <view class="line judgement">我的钱包
+      <text class="tl">余额：￥{{userBalance}} 元</text>
+    </view>
+  </view>
+  <view class="section">
+    <view class="line judgement">我的持仓</view>
+    <scroll-view scroll-y="true">
+      <view wx:for="{{holdens}}" wx:for-item="holden" wx:key="holden.product_code">
+        <navigator url="/page/holden/holden?id={{holden.id}}">
+          <view class="holden">{{holden.product_name}}</view>
+          <view class="holden_detail">份额：{{holden.position}}, 已收益：{{holden.interest}} 元</view>
+        </navigator>
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,63 @@
+<view class="container">
+  <view class="header {{scrollDown?'hidden':''}}">
+    <view class="name ellipsis">{{product.product_name}}</view>
+    <view class="line"></view>
+    <view class="desc">发行人: {{product.issuer}}</view>
+  </view>
+  <view class="content-container">
+    <scroll-view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">产品代码: </view>
+        <view class="weui-cell__ft">{{product.product_code}}</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">产品名称：</view>
+        <view class="weui-cell__ft">{{product.product_name}}</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">风险评级：</view>
+        <view class="weui-cell__ft">{{product.risk_rate}}</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">产品周期：</view>
+        <view class="weui-cell__ft">{{product.period}}天</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">预期年化收益率：</view>
+        <view class="weui-cell__ft">{{product.exp_annual_rate}}%</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">发行币种：</view>
+        <view class="weui-cell__ft">{{product.current_category}}</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">发行人：</view>
+        <view class="weui-cell__ft">{{product.issuer}}</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">发行规模：</view>
+        <view class="weui-cell__ft">{{product.issue_scale}}元</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">发行时间：</view>
+        <view class="weui-cell__ft">{{product.created_date}}</view>
+      </view>
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">剩余份额：</view>
+        <view class="weui-cell__ft">{{product.issue_scale - product.purchased_scale}}元</view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="cart">
+    <form bindsubmit="submit" report-submit="true">
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">
+          <input type='number' name="reserveCount" placeholder='请输入申购金额' bindinput="setReserveCount" />
+        </view>
+        <view class="weui-cell__ft">
+          <button class="yellow {{reserveCount == 0?'disabled':''}}" formType="submit" disabled="{{reserveCount == 0}}">申购</button>
+        </view>
+      </view>
+    </form>
+  </view>
+</view>

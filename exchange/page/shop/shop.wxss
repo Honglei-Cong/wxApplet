@@ -1,0 +1,122 @@
+@import "../../common/lib/weui.wxss";
+
+page {
+	height: 100%;
+	overflow: hidden;
+}
+.container {
+	height: 100%;
+	overflow: hidden;
+}
+
+.header {
+	position: relative;
+	background: #feb70f;
+	padding: 20rpx 40rpx;
+	color: #000;
+	-webkit-transition: all 0.6s ease-in-out;
+}
+.header.hidden {
+	/*-webkit-transform: translate3d(0,-290rpx,0);*/
+	margin-top: -290rpx;
+}
+.header .logo {
+	float: left;
+	width: 160rpx;
+	height: 160rpx;
+	border: 2rpx solid #fff;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+.header .name {
+	padding-top: 20rpx;
+	font-size: 36rpx;
+	line-height: 60rpx;
+}
+.header .welcome {
+	color: #333;
+	font-size: 30rpx;
+	width: 360rpx;
+	line-height: 70rpx;
+}
+.header .follow {
+	position: absolute;
+	right: 20px;
+	top: 50px;
+	font-size: 30rpx;
+	line-height: 2;
+	padding: 0 0.7em;
+	border: 1rpx solid;
+	border-radius: 30rpx;
+}
+.header .line {
+	clear: both;
+	width: 100%;
+	height: 1px;
+	border-bottom: 1px dashed #000;
+	padding-top: 20rpx;
+}
+.header .desc {
+	color: #333;
+	font-size: 30rpx;
+	line-height: 40rpx;
+	padding-top: 20rpx;
+}
+.content-container {
+	display: -webkit-flex;
+	height: 100%;
+	box-sizing: border-box;
+	padding-bottom: 100rpx;
+	font-size: 30rpx;
+}
+.classify-container {
+	width: 180rpx;
+	background: #efefef;
+	height: 100%;
+}
+.classify-container .classify {
+	padding: 50rpx 30rpx;
+	text-align: center;
+	border-bottom: 1px dashed #aaa;
+}
+.classify-container .classify.active {
+	background: #fff;
+}
+.classify-container .classify .name {
+	display: inline-block;
+	font-size: 30rpx;
+	color: #646464;
+	line-height: 1.2;
+	text-align: left;
+	pointer-events: none;
+}
+
+.goods-container {
+	-webkit-flex: 1;
+	background: #ffffff;
+	height: 100%;
+}
+.goods-container .title {
+	padding: 20rpx 25rpx;
+	color: #646464;
+	font-size: 30rpx;
+	line-height: 30rpx;
+	background: #f7f7f7;
+}
+
+.cart {
+	display: -webkit-flex;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 150rpx;
+	background: #fff;
+  font-size: 36rpx;
+}
+.cart button {
+	margin-top: 10rpx;
+  right: 20;
+	width: 200rpx;
+	height: 80%;
+}
